@@ -13,7 +13,7 @@ public class Library {
             NOTAVAIL,
             CHECKOUT,
             CHECKIN
-        };
+        }
 
         //Menu strings
         String mainMenu = """
@@ -144,7 +144,7 @@ public class Library {
     }
 
     public static List<Book> listBooksByStatus(Book[] inventory, boolean checkedOut) {
-        List<Book> b = new ArrayList<Book>();
+        List<Book> b = new ArrayList<>();
         for (Book book : inventory) {
             if (book.isCheckedOut == checkedOut) {
                 b.add(book);
@@ -154,7 +154,7 @@ public class Library {
     }
 
     public static List<Book> listBooksByStatus(Book[] inventory, String checkedOutTo) {
-        List<Book> b = new ArrayList<Book>();
+        List<Book> b = new ArrayList<>();
         for (Book book : inventory) {
             if (book.getCheckedOutTo().equalsIgnoreCase(checkedOutTo)) {
                 b.add(book);
@@ -165,7 +165,7 @@ public class Library {
 
     public static void displayBookList(List<Book> bookList) {
         for (int i = 0; i < bookList.size(); i++) {
-            System.out.println(Integer.toString(i+1) + ":\n" + bookList.get(i).retrieveInfo() + "\n");
+            System.out.println((i+1) + ":\n" + bookList.get(i).retrieveInfo() + "\n");
         }
     }
 
